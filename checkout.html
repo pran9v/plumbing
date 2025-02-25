@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Expert Plumbing | Checkout</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+
+
+<body>
+  <header class="main-header">
+    <nav class="nav-container">
+      <div class="logo">
+        <a href="index.html" style="text-decoration: none;"> <!-- Add this line -->
+          <h1>Expert <span>Plumbing</span></h1>
+        </a>
+      </div>
+      <button class="mobile-menu-btn" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="terms.html">Terms</a></li>
+        <li><a href="privacy.html">Privacy</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="checkout-container" style="background-color: rgb(255, 245, 213)">
+    <div class="checkout-form-wrapper">
+      <h2>Checkout</h2>
+      <form id="checkoutForm" action="thankyou.html" method="get">
+        <!-- Personal Information -->
+        <div class="form-group">
+          <label for="fullName">Full Name</label>
+          <input type="text" id="fullName" name="fullName" placeholder="Enter your full name">
+        </div>
+
+        <!-- Contact Information -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email">
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+          </div>
+        </div>
+
+        <!-- Address -->
+        <div class="form-group">
+          <label for="address">Address</label>
+          <input type="text" id="address" name="address" placeholder="Enter your street address">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" id="city" name="city" placeholder="City">
+          </div>
+          <div class="form-group">
+            <label for="state">State/Province</label>
+            <input type="text" id="state" name="state" placeholder="State/Province">
+          </div>
+          <div class="form-group">
+            <label for="zip">Zip/Postal Code</label>
+            <input type="text" id="zip" name="zip" placeholder="Zip/Postal Code">
+          </div>
+        </div>
+
+        <!-- Service Selection -->
+        <div class="form-group">
+          <label for="service">Select Service</label>
+          <select id="service" name="service">
+            <option value="" disabled selected>Choose a service</option>
+            <option value="emergency">Emergency Plumbing</option>
+            <option value="installation">Installation Services</option>
+            <option value="maintenance">Maintenance Services</option>
+            <option value="drain">Drain Cleaning</option>
+          </select>
+        </div>
+
+        <!-- Time Selection -->
+        <div class="form-group">
+          <label for="time">Preferred Service Time</label>
+          <select id="time" name="time">
+            <option value="" disabled selected>Choose a time</option>
+            <option value="morning">Morning (8AM - 12PM)</option>
+            <option value="afternoon">Afternoon (12PM - 4PM)</option>
+            <option value="evening">Evening (4PM - 8PM)</option>
+          </select>
+        </div>
+
+        <!-- Payment Option -->
+        <div class="form-group checkbox-group">
+          <input type="checkbox" id="payOnDelivery" name="payOnDelivery">
+          <label for="payOnDelivery">Pay on delivery</label>
+        </div>
+
+        <!-- Submit Button -->
+        <div class="form-group">
+          <button type="submit" class="btn-checkout">Complete Booking</button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+
+  <footer>
+    <div class="footer-content">
+      <div class="footer-section">
+        <h3>Contact Us</h3>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: info@expertplumbing</p>
+        <p>Address: 123 Main St, City, State 12345</p>
+      </div>
+      <div class="footer-section">
+        <h3>Hours</h3>
+        <p>Monday - Friday: 8am - 6pm</p>
+        <p>Saturday: 9am - 4pm</p>
+        <p>Emergency Service: 24/7</p>
+      </div>
+      <div class="footer-section">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Expert Plumbing. All rights reserved.</p>
+    </div>
+  </footer>
+  <script src="main.js"></script>
+</body>
+
+</html>

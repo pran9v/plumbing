@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Plumbing | Our Services </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+
+        
+        :root {
+            --primary-yellow: #FFC107;
+            --yellow-light: #FFF8E1;
+            --yellow-dark: #FFA000;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #FFFFFF;
+            --gray-light: #F5F5F5;
+            --gray-medium: #E0E0E0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'DM Sans', sans-serif;
+        }
+        
+        body {
+            color: var(--text);
+            background-color: var(--white);
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+         /* Header Styles */
+         .main-header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .logo h1 {
+            color: var(--text-dark);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+
+        .logo span {
+            color: var(--primary-yellow);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-left: 2rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-yellow);
+        }
+
+        .nav-links a.active::after, .nav-links a:hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-yellow);
+            bottom: 0;
+            left: 0;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        
+        /* Main content styles */
+        main {
+            padding-top: 5rem;
+        }
+        
+        section {
+            padding: 3rem 0;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            color: var(--text);
+        }
+        
+        h2:after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 3px;
+            background-color: var(--primary-yellow);
+            margin: 0.5rem auto 0;
+        }
+        
+        /* Services styles */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-content h3 i {
+            color: var(--primary-yellow);
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .service-content p {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+        }
+        
+        .service-features {
+            margin: 1.2rem 0;
+            padding-left: 1rem;
+        }
+        
+        .service-features li {
+            margin-bottom: 0.5rem;
+            list-style: none;
+            color: var(--text-light);
+        }
+        
+        .service-features li::before {
+            content: "✓";
+            color: var(--primary-yellow);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .book-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-yellow);
+            color: var(--text);
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .book-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* CTA section */
+        .cta-section {
+            background-color: #FFECB3;
+            text-align: center;
+            padding: 4rem 0;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background-color: var(--primary-yellow);
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-yellow);
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.3s;
+            border: 2px solid var(--primary-yellow);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--yellow-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: var(--gray-light);
+            padding: 4rem 2rem 2rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .footer-section h3 {
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-yellow);
+            bottom: 0;
+            left: 0;
+        }
+
+        .footer-section p {
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .footer-section ul li a:hover {
+            color: var(--primary-yellow);
+            padding-left: 5px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--gray-medium);
+        }
+
+        .footer-bottom p {
+            color: var(--text-light);
+        }
+        
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background-color: var(--white);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                padding: 2rem 0;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .mobile-menu-btn.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .mobile-menu-btn.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .mobile-menu-btn.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;"> <!-- Add this line -->
+                    <h1>Expert <span>Plumbing</span></h1>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html"  class="active">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section>
+            <div class="container">
+                <h2>Our Plumbing Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://img.freepik.com/free-photo/man-fixing-kitchen-sink_53876-13430.jpg?t=st=1740489573~exp=1740493173~hmac=863546961255804bacee35ead456db479b7c02d5cf75cee0598176b39258caa3&w=1380"
+                            alt="Emergency Repairs">
+                        </div>
+                        <div class="service-content">
+                            <h3><i class="fas fa-tools"></i> Emergency Plumbing</h3>
+                            <p>
+                                Our 24/7 emergency plumbing services are here to help you when you need it most. 
+                                Whether it's a burst pipe, a severe leak, or a sudden flooding situation, our team 
+                                is equipped to handle any plumbing crisis quickly and efficiently.
+                            </p>
+                            <ul class="service-features">
+                                <li>Burst pipes</li>
+                                <li>Severe leaks</li>
+                                <li>Flooding</li>
+                                <li>Sewer backups</li>
+                            </ul>
+                            <a href="checkout.html" class="book-btn">Book Now - $299.99</a>
+                        </div>
+                    </div>
+            
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://img.freepik.com/free-photo/plumber-assembling-pipe_1098-17772.jpg?t=st=1740489751~exp=1740493351~hmac=a723dfea5208fd685282836722909ebf7a00a792f7462fc82e8d72eb8d93d885&w=1480"
+                            alt="Installation">
+                        </div>
+                        <div class="service-content">
+                            <h3><i class="fas fa-wrench"></i> Installation Services</h3>
+                            <p>
+                                Our professional installation services ensure your plumbing fixtures, pipes, and systems are set up correctly and efficiently. 
+                                Whether you need a new faucet, toilet, or water heater installed, our skilled technicians use the latest tools and techniques.
+                            </p>
+                            <ul class="service-features">
+                                <li>Faucet installation</li>
+                                <li>Toilet installation</li>
+                                <li>Water heater setup</li>
+                                <li>Pipe fitting</li>
+                            </ul>
+                            <a href="checkout.html" class="book-btn">Book Now - $199.99</a>
+                        </div>
+                    </div>
+            
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://img.freepik.com/free-photo/water-tap-prevention-concentrated-man-leaning-water-faucet-touching-spout-pipe_259150-58276.jpg?t=st=1740489807~exp=1740493407~hmac=d5a366dc47d601a8a18b9c172fd2b65713d1853e0e5c50ebb76618811dc1dc70&w=1480"
+                            alt="Maintenance">
+                        </div>
+                        <div class="service-content">
+                            <h3><i class="fas fa-shield-alt"></i> Maintenance Services</h3>
+                            <p>
+                                Keep your plumbing system in top condition with our routine maintenance services. We offer leak detection, drain cleaning, 
+                                water pressure checks, and annual inspections to ensure everything runs smoothly.
+                            </p>
+                            <ul class="service-features">
+                                <li>Leak detection</li>
+                                <li>Drain cleaning</li>
+                                <li>Water pressure checks</li>
+                                <li>Annual inspections</li>
+                            </ul>
+                            <a href="checkout.html" class="book-btn">Book Now - $149.99</a>
+                        </div>
+                    </div>
+            
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://5.imimg.com/data5/SELLER/Default/2025/6/427363317/DX/CK/AR/120859410/drain-cleaning-services.jpg"
+                            alt="Drain Cleaning">
+                        </div>
+                        <div class="service-content">
+                            <h3><i class="fas fa-tint"></i> Drain Cleaning</h3>
+                            <p>
+                                Our thorough drain cleaning services are designed to remove blockages and prevent future clogs. Using advanced techniques 
+                                like hydro jetting and camera inspections, we can clear even the toughest obstructions.
+                            </p>
+                            <ul class="service-features">
+                                <li>Hydro jetting</li>
+                                <li>Camera inspections</li>
+                                <li>Root removal</li>
+                                <li>Drain maintenance</li>
+                            </ul>
+                            <a href="checkout.html" class="book-btn">Book Now - $129.99</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Schedule Service?</h2>
+                <p>Contact us today for fast, reliable plumbing services!</p>
+                <a href="contact.html" class="cta-button">Contact Us</a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@expertplumbing</p>
+                <p>Address: 123 Main St, City, State 12345</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Monday - Friday: 8am - 6pm</p>
+                <p>Saturday: 9am - 4pm</p>
+                <p>Emergency Service: 24/7</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Expert Plumbing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuBtn = document.querySelector('.mobile-menu-btn');
+            const navLinks = document.querySelector('.nav-links');
+            
+            menuBtn.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+                menuBtn.classList.toggle('active');
+            });
+        });
+    </script>
+</body>
+</html>

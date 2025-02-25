@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Expert Plumbing | Terms and Conditions</title>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-yellow: #FFC107;
+            --yellow-light: #FFF8E1;
+            --yellow-dark: #FFA000;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --white: #FFFFFF;
+            --gray-light: #F5F5F5;
+            --gray-medium: #E0E0E0;
+        }
+    
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'DM Sans', sans-serif;
+        }
+    
+        body {
+            background-color: var(--white);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+    
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+    
+        /* Header Styles */
+        .main-header {
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+    
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    
+        .logo h1 {
+            color: var(--text-dark);
+            font-size: 1.8rem;
+            font-weight: 700;
+        }
+    
+        .logo span {
+            color: var(--primary-yellow);
+        }
+    
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+    
+        .nav-links li {
+            margin-left: 2rem;
+        }
+    
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+    
+        .nav-links a:hover, .nav-links a.active {
+            color: var(--primary-yellow);
+        }
+    
+        .nav-links a.active::after, .nav-links a:hover::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 3px;
+            background-color: var(--primary-yellow);
+            bottom: 0;
+            left: 0;
+        }
+    
+        .mobile-menu-btn {
+            display: none;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+        }
+    
+        .mobile-menu-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: var(--text-dark);
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+    
+        /* Hero Section */
+        .terms-hero {
+            background: linear-gradient(135deg, var(--yellow-light) 0%, var(--primary-yellow) 100%);
+            padding: 6rem 2rem;
+            text-align: center;
+            margin-bottom: 4rem;
+            border-radius: 0 0 50% 50% / 15%;
+        }
+    
+        .terms-hero-content h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+        }
+    
+        .terms-hero-content p {
+            font-size: 1.3rem;
+            color: var(--text-dark);
+            font-weight: 300;
+        }
+    
+        /* Terms Content */
+        .terms-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+    
+        .terms-section {
+            margin-bottom: 4rem;
+        }
+    
+        .terms-section h2 {
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+    
+        .terms-section h2::after {
+            content: '';
+            position: absolute;
+            width: 60px;
+            height: 4px;
+            background-color: var(--primary-yellow);
+            bottom: 0;
+            left: 0;
+        }
+    
+        .terms-section p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+        }
+    
+        .terms-section ul {
+            list-style: disc;
+            padding-left: 2rem;
+            margin-bottom: 1.5rem;
+        }
+    
+        .terms-section ul li {
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+        }
+    
+        /* Footer Styles */
+        footer {
+            background-color: var(--gray-light);
+            padding: 4rem 2rem 2rem;
+        }
+    
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+    
+        .footer-section h3 {
+            color: var(--text-dark);
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+    
+        .footer-section h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-yellow);
+            bottom: 0;
+            left: 0;
+        }
+    
+        .footer-section p {
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+        }
+    
+        .footer-section ul {
+            list-style: none;
+        }
+    
+        .footer-section ul li {
+            margin-bottom: 0.8rem;
+        }
+    
+        .footer-section ul li a {
+            color: var(--text-light);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+    
+        .footer-section ul li a:hover {
+            color: var(--primary-yellow);
+            padding-left: 5px;
+        }
+    
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--gray-medium);
+        }
+    
+        .footer-bottom p {
+            color: var(--text-light);
+        }
+    
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--white);
+                flex-direction: column;
+                align-items: center;
+                padding-top: 2rem;
+                transition: all 0.3s ease;
+            }
+    
+            .nav-links.active {
+                left: 0;
+            }
+    
+            .nav-links li {
+                margin: 1.5rem 0;
+            }
+    
+            .mobile-menu-btn {
+                display: block;
+            }
+    
+            .terms-hero-content h1 {
+                font-size: 2.2rem;
+            }
+    
+            .terms-hero-content p {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;"> <!-- Add this line -->
+                    <h1>Expert <span>Plumbing</span></h1>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="terms.html" class="active">Terms</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="terms-hero">
+            <div class="terms-hero-content">
+                <h1>Terms and Conditions</h1>
+                <p>Please read these terms carefully before using our services.</p>
+            </div>
+        </section>
+
+        <section class="terms-content">
+            <div class="terms-section">
+                <h2>Introduction</h2>
+                <p>By accessing or using the services of Expert Plumbing, you agree to be bound by these Terms and Conditions. If you do not agree, please do not use our services. These terms outline your rights, obligations, and responsibilities when engaging with our services.</p>
+            </div>
+        
+            <div class="terms-section">
+                <h2>Service Agreement</h2>
+                <p>Our services are provided on an "as-is" basis. While we strive to maintain high-quality service, we do not guarantee that our services will be uninterrupted or error-free. We reserve the right to modify, suspend, or discontinue any service at our sole discretion without prior notice.</p>
+                <p>Customers are responsible for ensuring that their plumbing systems comply with local regulations before requesting services. Expert Plumbing is not liable for any pre-existing issues that may affect service outcomes.</p>
+            </div>
+        
+            <div class="terms-section">
+                <h2>Payment Terms</h2>
+                <p>Payment is due upon completion of services. We accept major credit cards, debit cards, and other payment methods as specified on our website. In some cases, a deposit may be required before service is rendered.</p>
+                <p>Failure to make payment within the specified timeframe may result in additional charges or suspension of future services. If a payment dispute arises, please contact our billing department immediately.</p>
+            </div>
+        
+            <div class="terms-section">
+                <h2>Cancellation & Rescheduling Policy</h2>
+                <p>You may cancel or reschedule your appointment up to 24 hours before the scheduled time without incurring any charges. Cancellations made within 24 hours of the appointment may be subject to a cancellation fee.</p>
+                <p>In the event of unforeseen circumstances, such as emergencies or extreme weather conditions, we reserve the right to reschedule appointments. We will make every effort to inform you in advance and provide an alternative service date.</p>
+            </div>
+        
+            <div class="terms-section">
+                <h2>Liability & Warranty</h2>
+                <p>Expert Plumbing guarantees the quality of our work. If any issues arise as a result of our services within 30 days of completion, we will inspect and address the problem at no additional cost.</p>
+                <p>However, we are not responsible for damages caused by pre-existing plumbing conditions, third-party interference, or customer misuse. Any modifications made by an unauthorized party will void any applicable warranty.</p>
+            </div>
+        
+            <div class="terms-section">
+                <h2>Privacy Policy</h2>
+                <p>Your privacy is important to us. Any personal information collected during the service request process will be handled in accordance with our Privacy Policy, which can be found on our website. We do not sell or share customer data with third parties without consent, except as required by law.</p>
+            </div>
+        
+            <div class="terms-section">
+                <h2>Contact Us</h2>
+                <p>If you have any questions about these Terms and Conditions, please contact us at:</p>
+                <p><strong>Email:</strong> <a href="mailto:info@expertplumbing">info@expertplumbing</a></p>
+                <p><strong>Phone:</strong> (123) 456-7890</p>
+                <p><strong>Office Address:</strong> 123 Main Street, City, State, ZIP Code</p>
+                <p>Our customer support team is available Monday to Friday, 9 AM - 5 PM.</p>
+            </div>
+        </section>
+        
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@expertplumbing</p>
+                <p>Address: 123 Main St, City, State 12345</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Monday - Friday: 8am - 6pm</p>
+                <p>Saturday: 9am - 4pm</p>
+                <p>Emergency Service: 24/7</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Expert Plumbing. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.querySelector('.mobile-menu-btn').addEventListener('click', function() {
+            document.querySelector('.nav-links').classList.toggle('active');
+        });
+    </script>
+</body>
+</html>

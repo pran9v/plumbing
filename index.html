@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Expert Plumbing | Your Trusted Local Plumber</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <style>
+         /* Services styles */
+         .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .service-card {
+            background-color: var(--white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-card:hover .service-image img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 1.5rem;
+        }
+        
+        .service-content h3 {
+            font-size: 1.4rem;
+            margin-bottom: 1rem;
+            color: var(--text);
+            display: flex;
+            align-items: center;
+        }
+        
+        .service-content h3 i {
+            color: var(--primary-yellow);
+            margin-right: 0.5rem;
+            font-size: 1.2rem;
+        }
+        
+        .service-content p {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+        }
+        
+        .service-features {
+            margin: 1.2rem 0;
+            padding-left: 1rem;
+        }
+        
+        .service-features li {
+            margin-bottom: 0.5rem;
+            list-style: none;
+            color: var(--text-light);
+        }
+        
+        .service-features li::before {
+            content: "✓";
+            color: var(--primary-yellow);
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+        
+        .book-btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            background-color: var(--primary-yellow);
+            color: var(--text);
+            font-weight: 500;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.3s;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .book-btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        /* CTA section */
+        .cta-section {
+            background-color: #FFECB3;
+            text-align: center;
+            padding: 4rem 0;
+            margin-top: 3rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 5px;
+            background-color: var(--primary-yellow);
+        }
+        
+        .cta-section h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .cta-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background-color: var(--primary-yellow);
+            color: white;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: background-color 0.3s, transform 0.3s;
+            border: 2px solid var(--primary-yellow);
+        }
+        
+        .cta-button:hover {
+            background-color: var(--yellow-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="main-header">
+        <nav class="nav-container">
+            <div class="logo">
+                <a href="index.html" style="text-decoration: none;"> <!-- Add this line -->
+                    <h1>Expert <span>Plumbing</span></h1>
+                </a>
+            </div>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links">
+                <li><a href="index.html" class="active">Home</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="terms.html">Terms</a></li>
+                <li><a href="privacy.html">Privacy</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="hero">
+        <div class="hero-content">
+            <h1>Your Trusted Local Plumbing Experts</h1>
+            <p>24/7 Emergency Service • Licensed & Insured • 100% Satisfaction Guaranteed</p>
+            <a href="contact.html" class="cta-button">Book Us Now</a>
+        </div>
+    </div>
+
+    <main>
+        <section class="services-overview">
+            <h2>Our Services</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://img.freepik.com/free-photo/man-fixing-kitchen-sink_53876-13430.jpg?t=st=1740489573~exp=1740493173~hmac=863546961255804bacee35ead456db479b7c02d5cf75cee0598176b39258caa3&w=1380"
+                            alt="Emergency Repairs">
+                    </div>
+                    <div class="service-info">
+                        <h3>Emergency</h3>
+                        <p>24/7 emergency plumbing services for when you need help fast.</p>
+                        <a href="services.html" class="book-btn">View More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://img.freepik.com/free-photo/plumber-assembling-pipe_1098-17772.jpg?t=st=1740489751~exp=1740493351~hmac=a723dfea5208fd685282836722909ebf7a00a792f7462fc82e8d72eb8d93d885&w=1480"
+                            alt="Installation">
+                    </div>
+                    <div class="service-info">
+                        <h3>Installation</h3>
+                        <p>Professional installation of fixtures, pipes, and plumbing systems.</p>
+                        <a href="services.html" class="book-btn">View More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://img.freepik.com/free-photo/water-tap-prevention-concentrated-man-leaning-water-faucet-touching-spout-pipe_259150-58276.jpg?t=st=1740489807~exp=1740493407~hmac=d5a366dc47d601a8a18b9c172fd2b65713d1853e0e5c50ebb76618811dc1dc70&w=1480"
+                            alt="Maintenance">
+                    </div>
+                    <div class="service-info">
+                        <h3>Maintenance</h3>
+                        <p>Regular maintenance to prevent costly repairs and extend system life.</p>
+                        <a href="services.html" class="book-btn">View More</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="https://5.imimg.com/data5/SELLER/Default/2025/6/427363317/DX/CK/AR/120859410/drain-cleaning-services.jpg"
+                            alt="Drain Cleaning">
+                    </div>
+                    <div class="service-info">
+                        <h3>Drain Cleaning</h3>
+                        <p>Advanced techniques to clear any clog and keep your drains flowing.</p>
+                        <a href="services.html" class="book-btn">View More</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="why-choose-us">
+            <h2>Why Choose Us?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-certificate"></i>
+                    </div>
+                    <div class="feature-info">
+                        <h3>Licensed & Insured</h3>
+                        <p>All our plumbers are fully licensed and insured for your peace of mind.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-briefcase"></i>
+                    </div>
+                    <div class="feature-info">
+                        <h3>Experience</h3>
+                        <p>Over 20 years of experience serving our local community.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-tags"></i>
+                    </div>
+                    <div class="feature-info">
+                        <h3>Fair Pricing</h3>
+                        <p>Transparent pricing with no hidden fees or surprise charges.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fa-solid fa-thumbs-up"></i>
+                    </div>
+                    <div class="feature-info">
+                        <h3>Quality Work</h3>
+                        <p>We stand behind our work with a 100% satisfaction guarantee.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+
+        <section class="testimonials">
+            <h2>What Our Customers Say</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-img">
+                        <img src="http://www.marketingtool.online/en/face-generator/img/faces/avatar-118a879f926fec15daf00114cc1543f7.jpg"
+                            alt="Customer">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Fast response time and professional service. Fixed our emergency leak quickly!"</p>
+                        <cite>- John D.</cite>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-img">
+                        <img src="http://www.marketingtool.online/en/face-generator/img/faces/avatar-113f8616c3c47d620238a73d5dce41e8.jpg"
+                            alt="Customer">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"The best plumbers in town. Fair prices and excellent workmanship."</p>
+                        <cite>- Sarah M.</cite>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-img">
+                        <img src="http://www.marketingtool.online/en/face-generator/img/faces/tjg5unsfvj4a1.jpg"
+                            alt="Customer">
+                    </div>
+                    <div class="testimonial-content">
+                        <p>"Reliable, honest, and thorough. Wouldn't trust anyone else with our plumbing."</p>
+                        <cite>- Selina R.</cite>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="diy-tips-section">
+            <div class="container">
+                <h2>DIY Maintenance Guides & Plumbing Tips</h2>
+                <p class="subtitle">Learn how to handle common plumbing issues and maintain your system like a pro!</p>
+
+                <div class="tips-grid">
+                    <!-- Tip 1 -->
+                    <div class="tip-card">
+                        <i class="fas fa-wrench icon"></i>
+                        <h3>How to Unclog a Drain</h3>
+                        <p>Mix 1/2 cup of baking soda with 1/2 cup of vinegar and pour it down the drain. Let it sit for
+                            15 minutes, then flush with hot water.</p>
+                    </div>
+
+                    <!-- Tip 2 -->
+                    <div class="tip-card">
+                        <i class="fas fa-snowflake icon"></i>
+                        <h3>Prevent Frozen Pipes in Winter</h3>
+                        <p>Insulate exposed pipes, keep your home heated, and let faucets drip slightly during freezing
+                            temperatures.</p>
+                    </div>
+
+                    <!-- Tip 3 -->
+                    <div class="tip-card">
+                        <i class="fas fa-tint icon"></i>
+                        <h3>Fix a Leaky Faucet</h3>
+                        <p>Turn off the water supply, disassemble the faucet, and replace the worn-out washer or O-ring.
+                        </p>
+                    </div>
+
+                    <!-- Tip 4 -->
+                    <div class="tip-card">
+                        <i class="fas fa-search icon"></i>
+                        <h3>Check for Hidden Leaks</h3>
+                        <p>Monitor your water meter. If it moves when no water is being used, you may have a hidden
+                            leak.</p>
+                    </div>
+
+                    <!-- Tip 5 -->
+                    <div class="tip-card">
+                        <i class="fas fa-fire icon"></i>
+                        <h3>Maintain Your Water Heater</h3>
+                        <p>Drain your water heater once a year to remove sediment buildup and improve efficiency.</p>
+                    </div>
+
+                    <!-- Tip 6 -->
+                    <div class="tip-card">
+                        <i class="fas fa-shower icon"></i>
+                        <h3>Clean Your Showerhead</h3>
+                        <p>Soak the showerhead in a vinegar solution for a few hours to remove mineral deposits and
+                            improve water flow.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <div class="container">
+                <h2>Details about our services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://img.freepik.com/free-photo/man-fixing-kitchen-sink_53876-13430.jpg?t=st=1740489573~exp=1740493173~hmac=863546961255804bacee35ead456db479b7c02d5cf75cee0598176b39258caa3&w=1380"
+                            alt="Emergency Repairs">
+                        </div>
+                        <div class="service-content">
+                            <h3><i class="fas fa-tools"></i> Emergency Plumbing</h3>
+                            <p>
+                                Our 24/7 emergency plumbing services are here to help you when you need it most. 
+                                Whether it's a burst pipe, a severe leak, or a sudden flooding situation, our team 
+                                is equipped to handle any plumbing crisis quickly and efficiently.
+                            </p>
+                            <ul class="service-features">
+                                <li>Burst pipes</li>
+                                <li>Severe leaks</li>
+                                <li>Flooding</li>
+                                <li>Sewer backups</li>
+                            </ul>
+                            <a href="checkout.html" class="book-btn">Book Now - $299.99</a>
+                        </div>
+                    </div>
+            
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://img.freepik.com/free-photo/plumber-assembling-pipe_1098-17772.jpg?t=st=1740489751~exp=1740493351~hmac=a723dfea5208fd685282836722909ebf7a00a792f7462fc82e8d72eb8d93d885&w=1480"
+                            alt="Installation">
+                        </div>
+                        <div class="service-content">
+                            <h3><i class="fas fa-wrench"></i> Installation Services</h3>
+                            <p>
+                                Our professional installation services ensure your plumbing fixtures, pipes, and systems are set up correctly and efficiently. 
+                                Whether you need a new faucet, toilet, or water heater installed, our skilled technicans will get it done for you.
+                            </p>
+                            <ul class="service-features">
+                                <li>Faucet installation</li>
+                                <li>Toilet installation</li>
+                                <li>Water heater setup</li>
+                                <li>Pipe fitting</li>
+                            </ul>
+                            <a href="checkout.html" class="book-btn">Book Now - $199.99</a>
+                        </div>
+                    </div>
+            
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://img.freepik.com/free-photo/water-tap-prevention-concentrated-man-leaning-water-faucet-touching-spout-pipe_259150-58276.jpg?t=st=1740489807~exp=1740493407~hmac=d5a366dc47d601a8a18b9c172fd2b65713d1853e0e5c50ebb76618811dc1dc70&w=1480"
+                            alt="Maintenance">
+                        </div>
+                        <div class="service-content">
+                            <h3><i class="fas fa-shield-alt"></i> Maintenance Services</h3>
+                            <p>
+                                Keep your plumbing system in top condition with our routine maintenance services. We offer leak detection, drain cleaning, 
+                                water pressure checks, and annual inspections to ensure everything runs smoothly.
+                            </p>
+                            <ul class="service-features">
+                                <li>Leak detection</li>
+                                <li>Drain cleaning</li>
+                                <li>Water pressure checks</li>
+                                <li>Annual inspections</li>
+                            </ul>
+                            <a href="checkout.html" class="book-btn">Book Now - $149.99</a>
+                        </div>
+                    </div>
+            
+                    <div class="service-card">
+                        <div class="service-image">
+                            <img src="https://5.imimg.com/data5/SELLER/Default/2025/6/427363317/DX/CK/AR/120859410/drain-cleaning-services.jpg"
+                            alt="Drain Cleaning">
+                        </div>
+                        <div class="service-content">
+                            <h3><i class="fas fa-tint"></i> Drain Cleaning</h3>
+                            <p>
+                                Our thorough drain cleaning services are designed to remove blockages and prevent future clogs. Using advanced techniques 
+                                like hydro jetting and camera inspections, we can clear even the toughest obstructions.
+                            </p>
+                            <ul class="service-features">
+                                <li>Hydro jetting</li>
+                                <li>Camera inspections</li>
+                                <li>Root removal</li>
+                                <li>Drain maintenance</li>
+                            </ul>
+                            <a href="checkout.html" class="book-btn">Book Now - $129.99</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="faq">
+            <h2>Frequently Asked Questions</h2>
+            <p class="faq-subtext">Have questions? We're here to help.</p>
+            <div class="faq-container">
+                <div class="faq-item">
+                    <button class="faq-question">What plumbing services do you offer?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We provide a range of services, including leak repairs, pipe installations, drain cleaning,
+                            water heater services, and emergency plumbing solutions.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do you offer emergency plumbing services?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer 24/7 emergency plumbing services for urgent issues like burst pipes, severe
+                            leaks, and clogged drains.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How much do your plumbing services cost?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Pricing varies based on the type of service needed. Contact us for a free estimate or to
+                            schedule an inspection.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How soon can you send a plumber?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>For emergency services, we can dispatch a plumber immediately. For regular services,
+                            appointments are usually available within 24-48 hours.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do you offer any warranties on your work?
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, we offer warranties on our plumbing repairs and installations. Warranty terms depend on
+                            the type of service provided.</p>
+                    </div>
+                </div>
+            </div>
+            <p class="faq-footer">Still have questions? <a href="#">Contact our support team</a></p>
+        </section>
+
+        <div class="contact-section-home">
+            <div class="contact-inner-container">
+                <div class="contact-text">Do you have any questions or feedback? We'd love to hear from you.</div>
+                <a href="contact.html" class="contact-btn">Contact Us</a>
+            </div>
+
+        </div>
+
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <p>Phone: (123) 456-7890</p>
+                <p>Email: info@expertplumbing</p>
+                <p>Address: 123 Main St, City, State 12345</p>
+            </div>
+            <div class="footer-section">
+                <h3>Hours</h3>
+                <p>Monday - Friday: 8am - 6pm</p>
+                <p>Saturday: 9am - 4pm</p>
+                <p>Emergency Service: 24/7</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Expert Plumbing. All rights reserved.</p>
+        </div>
+    </footer>
+    <script>
+        document.querySelectorAll(".faq-question").forEach(button => {
+            button.addEventListener("click", () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle("active");
+
+                // Close other open FAQs
+                document.querySelectorAll(".faq-item").forEach(item => {
+                    if (item !== faqItem) {
+                        item.classList.remove("active");
+                    }
+                });
+            });
+        });
+
+    </script>
+    <script src="main.js"></script>
+</body>
+
+</html>
