@@ -98,7 +98,7 @@ body {
 
 /* Hero Section */
 .hero {
-    background-image: url('https://img.freepik.com/free-vector/plumbers-repair-broken-plumbing-sink-toilet-bowl-heating-pipes-handymen-service-call-masters-male-characters-with-wrench-plunger-tools-fixing-home-appliances-cartoon-vector-illustration_107791-9719.jpg?t=st=1740488911~exp=1740492511~hmac=6c0095acf4707d1a557c664473e22cc16456d6aaf31051af267a8967222062af&w=1380');
+    background-image: url('src/banner.jpg');
     padding: 8rem 2rem 4rem;
     text-align: center;
 }
